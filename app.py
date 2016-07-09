@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import make_blog_post
+from jekyll_entry_converter import make_entry
 
 app = Flask(__name__)
 
@@ -13,8 +13,9 @@ def get_text():
         text = request.form['text']
     else:
         return 'methode error'
-    post = make_blog_post.make_blog_post(text)
-    return render_template('post_view.html', post=post)
+    post = make_entry.make_blog_post(text)
+    filename = 'test file name'
+    return render_template('post_view.html', post=post, filename=filename)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
