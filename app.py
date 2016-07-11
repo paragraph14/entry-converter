@@ -13,9 +13,10 @@ def get_text():
         text = request.form['text']
     else:
         return 'methode error'
-    post = make_entry.make_blog_post(text)
-    filename = 'test file name'
-    return render_template('post_view.html', post=post, filename=filename)
+    post = make_entry.entry(text)
+    filename = post.filename
+    filebody = post.body
+    return render_template('post_view.html', post=filebody, filename=filename)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
