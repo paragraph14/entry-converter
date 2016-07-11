@@ -18,4 +18,5 @@ def get_text():
     return render_template('post_view.html', post=post, filename=filename)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
+    # app.run(host='0.0.0.0', port=8080)
+    app.run()
