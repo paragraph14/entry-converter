@@ -23,6 +23,6 @@ def get_text():
     return render_template('post_view.html', post=filebody, filename=filename)
 
 if __name__ == '__main__':
-    app.debug = True
+    # app.debug = True
     app.run(host='0.0.0.0', port=8080)
     # app.run()
