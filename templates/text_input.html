@@ -1,7 +1,24 @@
 <!DOCTYPE html>
-<html>
-    <form action="/text_post" method='post'>
-        <textarea name="text" rows="4" cols="40"></textarea>
-        <input type="submit" value="submit"><input type="reset" value="reset">
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Sample</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- BootstrapのJS読み込み -->
+    <script src="{{url_for('static', filename='css/bootstrap.min.js')}}"></script>
+  </head>
+ 
+    <div class="container">
+        <form action="/text_post" method='post'>
+                <div class="form-group">
+                    <textarea type="text" class="form-control" rows = "10" id="text" placeholder="your blog text"></textarea>
+            </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="reset" class="btn btn-warning">Clear</button>
     </form>
-</html>
+    </div>
